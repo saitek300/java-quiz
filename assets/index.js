@@ -80,14 +80,16 @@ function selectAnswer(e) {
   setStatusClass(button, button.dataset.correct)
   
 })
-  if (shuffledQuestions > currentQuestionIndex + 1){
-  gameOver()
+  if (shuffledQuestions.length > currentQuestionIndex + 1 ){
+
+  startBtn.innerText = 'restart'
+  startBtn.classList.remove('hide')
 }
 }
 function setStatusClass(element,correct) {
 
   if (correct){
-    correct = true
+    
     (currentQuestionIndex++, setNextQuestion())
   }
   else {
