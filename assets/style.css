@@ -13,11 +13,18 @@ padding: 0;
 margin: 0;
 }
 
+#timerContainer{
+    
+}
 .container {
     width: 600px;
     max-width: 80%;
 }
 
+#question{
+    font-size:40px;
+    margin:20px;
+}
 .btn-grid{
     display:grid;
 }
@@ -29,6 +36,7 @@ margin: 0;
     border-color: rebeccapurple;
     border-radius: 20px;
     height: 41px;
+    margin:5px;
 }
 
 .btn:hover {

@@ -73,29 +73,35 @@ function resetState() {
 }
 
 function selectAnswer(e) {
-var selectedButton = e.target
-var correct = selectedButton.dataset.correct
-setStatusClass(document.body, correct)
-Array.from(answerButtonsElement.children).forEach(button =>{
+  var selectedButton = e.target
+  var correct = selectedButton.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtonsElement.children).forEach(button =>{
   setStatusClass(button, button.dataset.correct)
   
 })
+  if (shuffledQuestions > currentQuestionIndex + 1){
+  gameOver()
+}
 }
 function setStatusClass(element,correct) {
-  clearStatusClass(element)
+
   if (correct){
-    element.classList.add('correct')
+    correct = true
+    (currentQuestionIndex++, setNextQuestion())
   }
   else {
-    element.classList.add('wrong')
+    correct = false
+    timeLeft--
+    
   }
 }
 
-function clearStatusClass(element){
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
-}
 
+
+function gameOver() {
+  
+}
 var questions = [
   { 
     question: 'Commonly used data types DO not include:',
